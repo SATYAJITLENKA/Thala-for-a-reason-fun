@@ -101,8 +101,8 @@
     function fun(event) {
       event.preventDefault();
       
-      var enterV = document.getElementById("input").value;
-      console.log(typeof(enterV))
+      var enterV = document.getElementById("input").value.toLowerCase();
+      console.log(enterV)
       var result = document.getElementById("result");
      
       var backb=document.getElementById("back")
