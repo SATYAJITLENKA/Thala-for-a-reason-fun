@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fun</title>
+  </head>
+  <body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+      h1{
+        top: 0px;
+        color:yellow;
+        text-align: center;
+        font-size: 50px;
+        background-color: rgb(246, 246, 246);
+      }
+      form{
+       
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+       
+      }
+      input{
+        height: 60px;
+        width: 80%;
+        border-radius: 20px;
+        border: 1px solid rgb(122, 113, 102);
+        font-size: 25px;
+        color: blue;
+        padding-left: 20px;
+      }
+      span{
+        color: black;
+      }
+      button{
+        height: 60px;
+        width: 82%;
+        border-radius: 20px;
+        border: none;
+        background-color: rgb(0, 0, 0);
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        margin-top: 20px;
+    
+      }
+      button:hover{
+        background-color: rgb(43, 35, 35);
+      }
+      .active {
+        display: block;
+      }
+      .deactive {
+        display: none;
+      }
+    
+    </style>
+    <h1><span>Let's </span>Fun</h1>
+    <div style="display: flex;align-items: center;justify-content: center;margin-top: 40px; transition:ease;transform: ;">
+    <video id="ayein" class="deactive" src="./video/Aaiyen.mp4"></video>
+    <video id="thala" class="deactive" src="./video/thala.mp4"></video>
+    <video id="naughty" height="500px" class="deactive" src="./video/naughty.mp4"></video>
+    <video id="galli" src="./video/galli.mp4" class="deactive"></video>
+    </div>
+    <div id="result" style="text-align: center;font-size: 25px; margin-top: 20px;"></div>
+    <form class="" id="aform" onsubmit="fun(event)">
+      <input id="input" type="text" placeholder="Enter Whatever You Want" required />
+      <button>Want Fun</button>
+      <h4 style="margin-top: 10px; color: rgb(225, 205, 179);">Don't Type : i or naughty</h4>
+     
+    </form>
+    <div style="display: flex;align-items: center;justify-content: center;">
+    <button id="back" onclick="backto()" class="deactive">Back</button>
+   </div>
+
+   <footer style=" display:flex;justify-content: space-between;align-items: center;padding: 10px; position: sticky;bottom: 0px;">
+      <p style="text-align: center;">copyright &copy; Satyajit</p>
+      <div style="gap: 10px;display: flex;">
+      <a href="https://www.linkedin.com/in/satyajit-lenka/"><img src="./video/linkedin.jpeg" height="50px" alt="linkedin"></a>
+      <a href="https://github.com/SATYAJITLENKA"><img src="./video/github.jpeg" height="50px" alt="github"></a>
+    </div>
+   </footer>
+  </body>
+  <script>
+   var form=document.getElementById("aform")
+    function backto(){
+        location.reload();
+
+    }
+
+
+
+    function fun(event) {
+      event.preventDefault();
+      
+      var enterV = document.getElementById("input").value;
+      console.log(typeof(enterV))
+      var result = document.getElementById("result");
+     
+      var backb=document.getElementById("back")
+      form.classList.add("deactive")
+      backb.classList.remove("deactive")
+      // var fundiv=document.getElementById("fun-div")
+      // var ayein =document.getElementById("ayein")
+
+      if (enterV === "i") {
+        console.log("iiiii");
+        // fundiv.classList.remove("deactive")
+        // fundiv.classList.add("active")
+        ayein.classList.remove("deactive");
+        ayein.classList.add("active");
+        ayein.play();
+      } else if (enterV === "naughty") {
+        console.log("llll");
+        naughty.classList.remove("deactive");
+        naughty.classList.add("active");
+        naughty.play();
+      } 
+      else if (enterV === "ramakanta" || "somanath" || "lipu" || "rintu" || "rk" || "pintu" || "veeresh" || "venkat" || "satya" || "sipu") {
+        galli.classList.remove("deactive");
+        galli.classList.add("active");
+        result.innerText = enterV;
+        galli.play();
+      }
+      
+      else {
+        if (typeof enterV === "string") {
+            console.log(typeof(enterV))
+          let length = enterV.length;
+          console.log(length);
+          if (length < 7) {
+            let lv = 7 - length;
+            result.innerText =
+              enterV +
+              "=" +
+              length +
+              " : " +
+              length +
+              "+" +
+              lv +
+              "= 7" +
+              " Thala For a Reason";
+            thala.classList.remove("deactive");
+            thala.classList.add("active");
+            
+            thala.play();
+          } else {
+            let ev = length - 7;
+            result.innerText =
+              enterV +
+              "=" +
+              length +
+              " : " +
+              length +
+              "-" +
+              ev +
+              "= 7" +
+              " Thala For a Reason";
+            thala.classList.remove("deactive");
+            thala.classList.add("active");
+            
+            thala.play();
+          }
+        }else if(typeof enterV==="number" || enterV!=7){
+           console.log(enterV)
+        }
+      }
+    }
+
+  </script>
+</html>
