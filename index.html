@@ -13,7 +13,7 @@
         }
       h1{
         top: 0px;
-        color:yellow;
+        color:rgb(4, 41, 251);
         text-align: center;
         font-size: 50px;
         background-color: rgb(246, 246, 246);
@@ -45,7 +45,7 @@
         width: 82%;
         border-radius: 20px;
         border: none;
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(14, 25, 237);
         font-size: 20px;
         color: white;
         cursor: pointer;
@@ -53,7 +53,7 @@
     
       }
       button:hover{
-        background-color: rgb(43, 35, 35);
+        background-color: rgb(69, 81, 255);
       }
       .active {
         display: block;
@@ -63,18 +63,19 @@
       }
     
     </style>
-    <h1><span>Let's </span>Fun</h1>
-    <div style="display: flex;align-items: center;justify-content: center;margin-top: 40px; transition:ease;transform: ;">
+    <div style="background-color: rgb(224, 198, 165);"><h1><span>Let's </span>Fun</h1></div>
+    <div style="display: flex;align-items: center;justify-content: center;margin-top: 40px; transition:ease;">
     <video id="ayein" class="deactive" src="./video/Aaiyen.mp4"></video>
     <video id="thala" class="deactive" src="./video/thala.mp4"></video>
     <video id="naughty" height="500px" class="deactive" src="./video/naughty.mp4"></video>
     <video id="galli" src="./video/galli.mp4" class="deactive"></video>
+    <video id="Pyari" height="500px"  src="./video/Pyari.mp4" class="deactive" loop></video>
     </div>
     <div id="result" style="text-align: center;font-size: 25px; margin-top: 20px;"></div>
     <form class="" id="aform" onsubmit="fun(event)">
       <input id="input" type="text" placeholder="Enter Whatever You Want" required />
       <button>Want Fun</button>
-      <h4 style="margin-top: 10px; color: rgb(225, 205, 179);">Don't Type : i or naughty</h4>
+      <h4 style="margin-top: 10px; color: rgb(255, 222, 179);">Don't Type : i or naughty</h4>
      
     </form>
     <div style="display: flex;align-items: center;justify-content: center;">
@@ -130,6 +131,12 @@
         galli.classList.add("active");
         result.innerText = enterV;
         galli.play();
+      }
+      else if (enterV === "niharika" || enterV === "nehu") {
+        Pyari.classList.remove("deactive");
+        Pyari.classList.add("active");
+        result.innerText = enterV;
+        Pyari.play();
       }
       
       else {
