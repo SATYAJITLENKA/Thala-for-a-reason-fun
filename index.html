@@ -70,6 +70,7 @@
     <video id="naughty" height="500px" class="deactive" src="./video/naughty.mp4"></video>
     <video id="galli" src="./video/galli.mp4" class="deactive"></video>
     <video id="Pyari" height="500px"  src="./video/Pyari.mp4" class="deactive" loop></video>
+    <video id="Sonali" height="500px"  src="./video/sonali.mp4" class="deactive" loop></video>
     </div>
     <div id="result" style="text-align: center;font-size: 25px; margin-top: 20px;"></div>
     <form class="" id="aform" onsubmit="fun(event)">
@@ -138,7 +139,12 @@
         result.innerText = enterV;
         Pyari.play();
       }
-      
+      else if (enterV === "sonali") {
+        Sonali.classList.remove("deactive");
+        Sonali.classList.add("active");
+        result.innerText = enterV;
+        Sonali.play();
+      }
       else {
         if (typeof enterV === "string") {
             console.log(typeof(enterV))
